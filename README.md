@@ -1,3 +1,3 @@
 # git
-probando 
-Creado por Jaun David Martinez Rios
+Backend funcionando al 100%.
+conectar este backend con el frontend realizado en Angularjs
