@@ -35,7 +35,12 @@ public class Cliente implements Serializable {
     @Basic(optional = false)
     @Column(name = "id")
     private Integer id;
+<<<<<<< HEAD
     @Basic(optional = true)
+=======
+    @Basic(optional = false)
+    @NotNull
+>>>>>>> 10d81fb9412cc80c521ea846b07523c9a961b98f
     @Size(min = 1, max = 45)
     @Column(name = "tipo")
     private String tipo;
@@ -53,7 +58,11 @@ public class Cliente implements Serializable {
     private String apellidos;
     @Basic(optional = false)
     @NotNull
+<<<<<<< HEAD
     @Size(min = 1, max=100)
+=======
+    @Size(min = 1, max=45)
+>>>>>>> 10d81fb9412cc80c521ea846b07523c9a961b98f
     @Column(name = "password")
     private String password;
     @Basic(optional = false)
@@ -71,7 +80,12 @@ public class Cliente implements Serializable {
     @Size(min = 1, max = 45)
     @Column(name = "telefono_2")
     private String telefono2;
+<<<<<<< HEAD
     @Basic(optional = true)
+=======
+    @Basic(optional = false)
+    @NotNull
+>>>>>>> 10d81fb9412cc80c521ea846b07523c9a961b98f
     @Size(min = 1, max = 45)
     @Column(name = "direccion")
     private String direccion;
@@ -83,10 +97,17 @@ public class Cliente implements Serializable {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "cliente")    
     private List<Pedido> pedidoList;
     @JoinColumn(name = "id_ciudad", referencedColumnName = "id")
+<<<<<<< HEAD
     @ManyToOne(optional = true)
     private Ciudad ciudad;
     @JoinColumn(name = "id_documentos", referencedColumnName = "id")
     @ManyToOne(optional = true)
+=======
+    @ManyToOne(optional = false)
+    private Ciudad ciudad;
+    @JoinColumn(name = "id_documentos", referencedColumnName = "id")
+    @ManyToOne(optional = false)
+>>>>>>> 10d81fb9412cc80c521ea846b07523c9a961b98f
     private Documento documento;
 
     public Cliente() {
