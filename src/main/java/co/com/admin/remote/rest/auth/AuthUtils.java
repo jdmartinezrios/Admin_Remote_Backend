@@ -21,11 +21,7 @@ import org.joda.time.DateTime;
 public final class AuthUtils {
 
     private static final JWSHeader JWT_HEADER = new JWSHeader(JWSAlgorithm.HS256);
-<<<<<<< HEAD
     private static final String TOKEN_SECRET = "20170706.Elegance";
-=======
-    private static final String TOKEN_SECRET = "adsilomejor**";
->>>>>>> 10d81fb9412cc80c521ea846b07523c9a961b98f
     public static final String AUTH_HEADER_KEY = "Authorization";
 
     public static String getSubject(String authHeader) throws ParseException, JOSEException {
@@ -47,11 +43,7 @@ public final class AuthUtils {
         claim.setIssuer(host);
         claim.setIssueTime(DateTime.now().toDate());
         claim.setExpirationTime(DateTime.now().plusDays(1).toDate());
-<<<<<<< HEAD
         claim.setCustomClaim("user", user.getNombres());
-=======
-        claim.setCustomClaim("user", user.getNombres() + " " + user.getApellidos());
->>>>>>> 10d81fb9412cc80c521ea846b07523c9a961b98f
         claim.setCustomClaim("roles", Arrays.toString(user.getRolesList().toArray()));
         JWSSigner signer = new MACSigner(TOKEN_SECRET);
         SignedJWT jwt = new SignedJWT(JWT_HEADER, claim);

@@ -35,7 +35,6 @@ public class ClienteFacade extends AbstractFacade<Cliente> {
     public ClienteFacade() {
         super(Cliente.class);
     }
-<<<<<<< HEAD
     public Cliente findClienteByNumDocumento(String numDocumento) {
 
         CriteriaBuilder cb = getEntityManager().getCriteriaBuilder();
@@ -51,28 +50,5 @@ public class ClienteFacade extends AbstractFacade<Cliente> {
             return null;
         }
     }
-=======
-    /**
-     * buscar cliente por id
-     * 
-     * @param numDocumento
-     * @return 
-     */
-    public Cliente findClienteByNumDocumento(String numDocumento){
-        CriteriaBuilder cb = getEntityManager().getCriteriaBuilder();
-        CriteriaQuery<Cliente> cq = cb.createQuery(Cliente.class);
-        Root<Cliente> tercero = cq.from(Cliente.class);
-        
-        cq.where(cb.equal(tercero.get(Cliente_.numDocumento), numDocumento));
-        TypedQuery<Cliente> tq = getEntityManager().createQuery(cq);
-        
-        try {
-            return (Cliente) tq.getSingleResult();
-        } catch (NonUniqueResultException ex) {
-            throw ex;
-        } catch(NoResultException e){
-            return null;
-        }
-    }  
->>>>>>> 10d81fb9412cc80c521ea846b07523c9a961b98f
+ 
 }
